@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holidays_Interactive Image&Map_HTML</title>
+
+    <!-- including the scripts for enhance the picture -->
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.5.4/jquery.imagemapster.min.js"></script>
+        <style>
+            img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+
+    </head>
+
+<body>
+    <h1> Christmas Breakfast</h1>
+    <!-- Image map with areas for different breakfast items -->
+
+    <img src="https://images.unsplash.com/photo-1658769986562-8fc8af2d5a31?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        usemap="#Breakfast-map" alt="Breakfast in Bed" id="Breakfast-map-image">
+
+    <!-- Image clickable areas -->
+    <map name="Breakfast" id="Breakfast">
+
+        <!-- Rectangular Image click-->
+        <area shape="rect" coords="1305, 128, 1800, 770, 1291,281, 769, 751"
+            href="https://www.thepioneerwoman.com/food-cooking/meals-menus/g46169448/easy-appetizers/"
+            alt="Acai bowl with blueberries">
+
+        <!-- Circle Image click-->
+        <area shape="circle" coords="1880, 158, 150"
+            href="https://www.thepioneerwoman.com/food-cooking/meals-menus/g46169448/easy-appetizers/"
+            alt="Fruit Medley with Yougurt">
+
+        <!-- Poly Image click-->
+        <area shape="poly" coords="100, 268, 565, 271, 1121, 301, 711, 353, 100, 334, 20, 244"
+            href="https://www.thepioneerwoman.com/food-cooking/meals-menus/g46169448/easy-appetizers/"
+            alt="Turkey Almond Toast">
+
+    </map>
+    <script>
+        // Initialize the image map on the page load
+        $(document).ready(function () {
+            // Make the image map responsive
+            $('Breakfast-map-image').mapster({
+                fillColor: 'ff0000',  // Highlight color
+                fillOpacity: 0.5,    // Highlight opacity
+                stroke: true,        // Outline around regions
+                strokeColor: '0000ff',// Border color
+                strokeWidth: 2, //Border thickness
+                isSelectable: false, // Disable selecting areas
+                scaleMap: true       // Enable responsive scaling
+            });
+        });
+    </script>
+</body>
+</html>
